@@ -1,0 +1,214 @@
+<html>
+
+<head>
+    <title> attractive calculator</title>
+    <style>
+        body{
+    margin: 0;
+    padding:0;
+    line-height: 0.5;
+    
+    background-image: url("https://img.freepik.com/premium-photo/flat-chinese-new-year-festival-celebration-background-china-city-old-houses-chinese_625492-24181.jpg?w=2000");
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+}
+
+.calci{
+    width: 500px;
+    padding-top: 100px;
+    padding-bottom: 100;
+    position: absolute;
+    top:50%;
+    left:70%;
+    transition:0.25px;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+#zero{
+
+height: 55;
+width: 116;
+font-size: 20;
+    font-family: sans-serif;
+    font-weight: 300;
+
+}
+
+#display{
+    
+    border:none;
+    background: white;
+    border-radius: 30px;
+    width: 245;
+    font-size: 20;
+    font-family: sans-serif;
+    font-weight: 300;
+    height: 60;
+    margin: auto;
+    border:2px solid white(5, 218, 255, 0.726);
+    color: black;
+    box-shadow: 0px 0px 0px .2em;
+
+
+
+}
+.button{
+    padding: 2.5px;
+    width: 55;
+    height: 55;
+    padding-top: -1;
+    font-size: 20;
+    border: none;
+    background: white;
+    font-family: sans-serif;
+    font-weight: 300;
+    border:0;
+    border-radius: 30px;
+    margin: 1.5;
+    transition:0.25px;
+    box-shadow: 0px 0px 0px .2em;
+    
+}
+
+h1{
+    margin-top: 300px;
+    margin-left: 100px;
+    font-family: sans-serif;
+
+    font-size:50;
+   
+    text-decoration: underline;
+
+color: antiquewhite;
+text-transform: uppercase;
+font-weight: 700;}
+
+h2{
+
+    color: antiquewhite;
+    margin-top: -1px;
+    font-family: sans-serif;
+    margin-left: 438px;
+}
+.button{
+    width: 55;
+    height: 55;
+    padding-top: -1;
+    font-size: 20;
+    text-align: center;
+    color: black;
+    border: none;
+    background: white;
+    font-family: sans-serif;
+    font-weight: 500;
+    border:0;
+    border-radius: 30px;
+    margin: 1.5;
+    transition:0.25px;
+    cursor:pointer;
+    
+    
+    
+}
+
+
+.button:hover{
+    background: #00d9ff;
+}
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+    body{
+      width: 100%;
+      font-size: 12px;
+      padding-left: 23px;
+      flex-direction: column-reverse;}
+  }
+  
+    </style>
+</head>
+
+<body>
+    <font face=cooper>
+
+        <h1 align="left">
+            calculator
+        </h1>
+        <h2>
+            by_- Aman Tiwari
+        </h2>
+    </font>>
+
+    <form name="form1" class="calci">
+        <input type="text" name="answer" id="display" class="input">
+        <br></br>
+
+
+        <button class="button" onclick="del()">C</button>
+
+<input type="button" class="button" id="fact" value="%" >
+
+        <input type="button" class="button" value="00">
+
+        <input type="button" class="button" value="/"><br></br>
+        <input type="button" class="button" value="7">
+        <input type="button" class="button" value="8">
+        <input type="button" class="button" value="9">
+
+        <input type="button" class="button" value="*"><br></br>
+
+
+        <input type="button" class="button" value="4">
+        <input type="button" class="button" value="5">
+
+        <input type="button" class="button" value="6">
+
+        <input type="button" class="button" value="-"><br></br>
+        <input type="button" class="button" value="1">
+        <input type="button" class="button" value="2">
+
+        <input type="button" class="button" value="3">
+
+        <input type="button" class="button" value="+"><br></br>
+
+        <input type="button" class="button" value="0">
+
+        <input type="button" class="button" value=".">
+        <input type="button" class="button" value="=">
+
+    </form>
+</body>
+<script>
+    let string = " ";
+    let buttons = document.querySelectorAll('.button');
+    Array.from(buttons).forEach((button) => {
+        button.addEventListener('click', (e) => {
+            if (e.target.value == '=') {
+                string = eval(string);
+                document.querySelector('.input').value = string;
+            }
+            else{
+                console.log(e.target);
+                string = string + e.target.value;
+                document.querySelector('.input').value = string;
+            }
+
+        })
+    })
+    function del(e){
+        e.preventDefault();
+                string="";
+                document.querySelector('.input').value=string;
+    }
+    //const fact = document.getElementById('fact');
+    // function fact(){
+    //     // if(e.target.value=='='){
+    //     for(let i=1;i<string;i++){
+    //         string=string*i;
+        
+    //     document.querySelector('.input').value=string;
+    // }}
+   
+
+ 
+</script>
+
+</html>
